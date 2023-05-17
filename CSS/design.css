@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+    width: 100%;
+  }
+  
+  nav {
+    background: #c75dc5;
+    height: 100px;
+    width: 100%;
+    border-bottom: 3px solid #EDF5E1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+  
+  label.logo {
+    padding: 0 80px;
+  }
+  
+  label.logo img {
+    height: 100px;
+  }
+  
+  nav ul {
+    float: right;
+    margin-right: 20px;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 9px 5px;
+  }
+  
+  nav ul li a {
+    color: white;
+    font-size: 15px;
+    padding: 7px 17px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+  }
+  
+  a.active,
+  a:hover {
+    background: #551360;
+    transition: 0.5s;
+  }
+  
+  .checkbtn {
+    font-size: 30px;
+    color: black;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #check {
+    display: none;
+  }
+  
+  .baner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../Images/hall.jpg);
+    margin: auto;
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #752270;
+    text-align: center;
+  }
+  
+  .baner h1 {
+    padding: 100px 0 40px 0;
+    font-size: 60px;
+    font-weight: 100;
+    color: #3e123b;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .baner a {
+    display: block;
+    border: 3px solid white;
+    font-size: 30px;
+    margin: 0 auto;
+    border-radius: 30px;
+    width: 180px;
+    text-decoration: none;
+    color: #3e123b;
+  }
+  
+  .baner a:hover {
+    background-color: white;
+  }
+  
+  .wrapper {
+    background-color: #1A202C;
+  }
+  
+  .wrapper p {
+    text-align: center;
+    font-size: 15px;
+    padding: 10px 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .wrapper h1 {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ab47a5;
+  }
+  
+  .wrapper h2 {
+    text-align: center;
+    font-size: 25px;
+    padding: 10px 0 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .img-area {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .single-img {
+    padding: 20px 20px 20px 40px;
+    color: #ab47a5;
+  }
+  
+  img:hover {
+    opacity: 0.5;
+    transition: 0.9s;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #c998d0;
+  }
+  
+  @media (max-width: 952px) {
+    label.logo {
+      font-size: 30px;
+      padding-left: 50px;
+    }
+    nav ul li a {
+      font-size: 16px;
+    }
+    .baner {
+      width: 100%;
+      background-position: center;
+    }
+  }
+  
+  @media (max-width: 858px) {
+    .checkbtn {
+      display: block;
+    }
+    ul {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: #312F2F;
+      top: 80px;
+      left: -100%;
+      text-align: center;
+      transition: all 0.5s;
+    }
+    nav ul li {
+      display: block;
+      margin: 50px 0;
+      line-height: 30px;
+    }
+    nav ul li a {
+      font-size: 20px;
+    }
+    a:hover,
+    a.active {
+      background: none;
+      color: #5d425b;
+    }
+    #check:checked ~ ul {
+      left: 0;
+    }
+    .wrapper p {
+      font-size: 11px;
+    }
+    .wrapper h2 {
+      font-size: 17px;
+    }
+  }

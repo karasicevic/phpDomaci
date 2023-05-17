@@ -1,0 +1,85 @@
+body {
+    background-color: #13293D;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 100px auto;
+    background-color: #641d6b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  h1 {
+    color: #EDE7BE;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px #000;
+  }
+  
+  label {
+    color: #fff;
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #B8C2D1;
+    color: #333;
+  }
+  
+  input[type="submit"] {
+    background-color: #EDE7BE;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #000;
+    color: #c56adc;
+  }
+  
+  input[type="reset"] {
+    background-color: #e97cf5;
+    color: #edbeda;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  input[type="reset"]:hover {
+    background-color: #c56adc;
+    color: #000;
+  }
+  
+  a {
+    color: #c56adc;
+  }
+  
+  a:hover {
+    color: #fff;
+  }
+  
+  .para-2 {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 1.2em;
+  }
