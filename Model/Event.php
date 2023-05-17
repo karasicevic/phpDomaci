@@ -19,13 +19,13 @@ class Event {
     }
 
 	public static function getAllEvents($db,$condition){
-		$query="SELECT * FROM event g JOIN bend b  ON g.Restaurant_id=b.id".$condition;
+		$query="SELECT * FROM event e JOIN restaurant r  ON e.restaurantId=r.id".$condition;
 		$query=trim($query);
         $result=$db->query($query) or die($db->error);
         $array=[];
-        while($r = $result->fetch_assoc()){
-			$restaurant=new Restaurant($r['Id'],$r['password'],$r['name']);
-			$event=new Event($r['Id'],$r['type'],$r['price'],$r['numOfGuests'],$r['date'],$restaurant);
+        while($res = $result->fetch_assoc()){
+			$restaurant=new Restaurant($res['restaurantId'],$res['password'],$res['name']);
+			$event=new Event(99,$res['type'],$res['price'],$res['numOfGuests'],$res['date'],$restaurant);
             array_push($array,$event);
             }
         return $array;
@@ -33,7 +33,7 @@ class Event {
 
     public function AddEvent($data,$db){
 		if($data['price'] === '' || $data['type'] === '' || $data[numOfGuests]==='' || $data['date'] === ''){
-            echo '<script>alert("Nisu popunjena sva polja!")</script>';
+            echo '<script>alert("Some filds are empty!")</script>';
 		}else{
             $restaurantId = isset($data['restaurantid']) && is_numeric($data['restaurantid']) ? intval($data['restaurantid']) : null;
         if ($restaurantId === null) {
@@ -43,9 +43,9 @@ class Event {
     $save=$db->query("INSERT INTO event(price, date, type, numOfGuests, restaurant_id) VALUES ('".$data['price']."','".$data['date']."','".$data['type']."','".$data['numOfGuests']."','".$data['restaurantid']."')");
     
     if($save){
-        echo '<script>alert("Događaj je uspešno zakazan!")</script>';
+        echo '<script>alert("Event added succsecfully!")</script>';
     }else{
-        echo '<script>alert("Greška prilikom zakazivanja događaja!")</script>';
+        echo '<script>alert("ERROR, event is not added!")</script>';
     }
     
 }

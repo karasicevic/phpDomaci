@@ -10,22 +10,17 @@
 </head>
 <body>
     <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-        </label>
         <label class="logo"><img src="images/logo.jpg"></label>
         <ul>
         <li><a id="home-link" href="index.php">Home</a></li>
         <li><a id="book-link" href="booking.php">Book a event</a></li>
-<li><a id="events-link" href="bookedEvents.php">All events</a></li>
-<li><a id="register-link" href="register.php">Register</a></li>
-
+        <li><a id="events-link" href="bookedEvents.php">All events</a></li>
+        <li><a id="register-link" href="register.php">Register</a></li>
         </ul>
     </nav>
+
     <script>
   var currentUrl = window.location.href;
-
 
   if (currentUrl.includes("index.php")) {
     document.getElementById("home-link").classList.add("active")

@@ -71,7 +71,7 @@
   }
   
   .baner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../Images/hall.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/hall.jpg);
     margin: auto;
     height: 600px;
     width: 100%;
@@ -134,14 +134,22 @@
   .img-area {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
   
   .single-img {
+    width: auto;
+    height: 100px;
     padding: 20px 20px 20px 40px;
     color: #ab47a5;
+    display: inline-block;
+  }
+  .single-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
   }
   
   img:hover {

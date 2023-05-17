@@ -16,15 +16,14 @@
  <br>
    <a href="./form.php">Log in</a> 
 </br>
+    <div class="img-area">
+      <div class="single-img"><img src="images/hall2.jpg"></div>
+      <div class="single-img"><img src="images/hall1.jpg"></div>
+      <div class="single-img"><img src="images/hall3.jpg"></div>
+   </div>
 </div>
 <div class="wrapper">
-    <h1>NEWS</h1>
-    <div class="img-area">
-      <div class="single-img"><img src="images/hall2.jpg" alt=""></div>
-      <div class="single-img"><img src="images/hall1.jpg"></div>
-      <div class="single-img"><img src="images/hall3.jpg">
-       </div>
-    </div>
+
     <?php include './header_footer/footer.php';?>
   </div>
 </body>
