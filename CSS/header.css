@@ -9,22 +9,52 @@
 
 body {
   font-family: Montserrat, sans-serif;
+  padding-top: 100px;
 }
-
 nav {
-  background: #663867;
+  background: #c75dc5;
   height: 100px;
   width: 100%;
+  border-bottom: 3px solid #EDF5E1;
   position: fixed;
   top: 0;
-  z-index: 999;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+nav ul {
+  float: right;
+  margin-right: 20px;
 }
 
-label.logo {
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 9px 5px;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 15px;
+  padding: 7px 17px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: none;
+}
+
+a.logo {
   padding: 0 20px;
   font-size: 20px;
   color: #fff;
   line-height: 60px;
+}
+
+a.logo img {
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0px 0px 5px #000;
 }
 
 nav ul {
@@ -47,6 +77,11 @@ nav ul li a {
 
 nav ul li a:hover, a.active {
   background: #99479d;
+}
+
+.fixed-size-logo {
+  width: 20px;
+  height: 20px;
 }
 
 @media (max-width: 20px) {

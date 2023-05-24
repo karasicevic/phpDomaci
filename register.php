@@ -2,6 +2,7 @@
 <?php
 include "dbBroker.php";
 include "Model/Restaurant.php";
+//include "./header_footer/header.php";
 
 if (isset($_POST['register'])) {
     $name = trim($_POST['name']);
@@ -42,6 +43,8 @@ if (isset($_POST['register'])) {
   
 
   <body>
+    
+<?php  include'./header_footer/header.php';?>
   <div class="container" id="Form">
     <form name="form" action="#" method="POST" class="login-form">
       <h1>Sign up</h1>

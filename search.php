@@ -13,11 +13,12 @@
 </head>
 
 <body>   
+	
+<?php  include'./header_footer/header.php';?>
     <div class="container">
 			<br />
 			<br />
 			<br />
-			<h2 alignment="center">All events</h2><br />
 			<div class="form-group">
 				<div class="input-group">
 					<span class="input-group-addon">Search</span>

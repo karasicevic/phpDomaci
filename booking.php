@@ -15,8 +15,7 @@ if(isset($_POST['logout'])) {
     header("Location: index.php");
 }
 
-
- $restaurant=Restaurant::getAllRestaurants($conn);
+ $restaurants = Restaurant::getAllRestaurants($conn);
 
  if(isset($_POST['add'])) {
     $price = trim($_POST['price']);
@@ -25,9 +24,7 @@ if(isset($_POST['logout'])) {
     $date = trim($_POST['date']);
     $selected_restaurant = $_POST['selected_restaurant'];
 
-    
-
-    if(empty($restaurant)) {
+    if(empty($selected_restaurant)) {
         echo '<script>alert("You did not pick a restaurant!")</script>';
     } else {
         $data = array (
@@ -35,10 +32,10 @@ if(isset($_POST['logout'])) {
             "type" => $type,
             "numOfGuests"=> $numOfGuests,                 
             "date" => $date,
-            "restaurantid" => $selected_restaurant
+            "restaurantId" => $selected_restaurant
         );  
 
-        $event = new Event(null, $price, $type, $numOfGuests, $date, $selected_restaurant);    
+        $event = new Event(null, $price, $type, $numOfGuests, $date, $selected_restaurant);   
         $event->AddEvent($data, $conn);
         header("Location: booking.php");
     }
@@ -78,6 +75,7 @@ if(isset($_POST['logout'])) {
 
 <body>
     
+<?php  include'./header_footer/header.php';?>
     <div class="row">
         <div id="uni-logos-wrapper" class="col-12">
             
@@ -88,18 +86,19 @@ if(isset($_POST['logout'])) {
     
         <div class="col-md-4">
            
-            <form name="bookingEvent" action="" onsubmit="return validateForm()" method="POST" role="form">
-                <div class="form-group">
-                    <label for="price">Price</label>
-                    <input type="text" class="form-control" name="price" id="price" placeholder="Enter price ">
-                </div>
+            <form name="bookingEvent" action="<?php echo $_SERVER["PHP_SELF"]; ?>" onsubmit="return validateForm()" method="POST" role="form">
+                
                 <div class="form-group">
                     <label for="type">Type of event</label>
                     <input type="text" class="form-control" name="type" id="type" placeholder="Enter type of event">
                 </div>
                 <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="text" class="form-control" name="price" id="price" placeholder="Enter price ">
+                </div>
+                <div class="form-group">
                     <label for="numOfGuests">Number of guests</label>
-                    <input type="text" class="form-control" name="numOfGUests" id="numOfGuests" placeholder="Enter number of guests ">
+                    <input type="text" class="form-control" name="numOfGuests" id="numOfGuests" placeholder="Enter number of guests ">
                 </div>
                 <div class="form-group">
                     <label for="date">Date </label>
@@ -110,7 +109,7 @@ if(isset($_POST['logout'])) {
                     <label for="restaurant">Name of restaurant</label>
 
                     <select class="form-control" name="selected_restaurant" id="selected_restaurant">
-                        <?php foreach($restaurant as $res): ?>
+                        <?php foreach($restaurants as $res): ?>
                         <option value="<?php echo $res->id;?>">
                             <?php echo $res->name;?>
                         </option>

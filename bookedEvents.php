@@ -4,7 +4,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
   header("Location: ./form.php");
   exit;
 }
-//include "./header_footer/header.php";
+include "./header_footer/header.php";
 include "dbBroker.php";
 include "Model/Restaurant.php";
 include "Model/Event.php";
@@ -34,6 +34,9 @@ if(isset($_POST['logout'])) {
 </head>
 
 <body>  
+  <div class="wrapper">
+  
+</div>
 <section>
 <div class="container" id="table">
              <table class="table table-light table-striped table-hover table-borderless"> 
@@ -84,8 +87,6 @@ if(isset($_POST['logout'])) {
       </div>
       <div class="modal-body">
        <div class="form"-group>
-<label> Name</label>
-<input type="text" id="name" class="form-control">
 </div>
 <div class="form"-group>
 <label> Type of event</label>
@@ -119,14 +120,16 @@ if(isset($_POST['logout'])) {
 $(document).ready(function() {
   $(document).on('click', 'a[data-role=update]', function() {
     var id = $(this).data('id'); 
-    var name = $('#' + id).children('td[data-target=name]').text();
-    var club = $('#' + id).children('td[data-target=club]').text();
+//    var name = $('#' + id).children('td[data-target=name]').text();
+    var type = $('#' + id).children('td[data-target=type]').text();
     var price = $('#' + id).children('td[data-target=price]').text();
+    var numOfGuests = $('#' + id).children('td[data-target=numOfGuests]').text();
     var date = $('#' + id).children('td[data-target=date]').text();
 
-    $('#name').val(name);
-    $('#club').val(club);
+ //   $('#name').val(name);
+    $('#type').val(type);
     $('#price').val(price);
+    $('#numOfGuests').val(numOfGuests);
     $('#date').val(date);
     $('#id').val(id);
     $('#myModal').modal('toggle');
@@ -134,9 +137,10 @@ $(document).ready(function() {
 
   $('#save').click(function() {
     var id = $('#id').val();
-    var name = $('#name').val();
-    var club = $('#club').val();
+ //   var name = $('#name').val();
+    var type = $('#type').val();
     var price = $('#price').val();
+    var numOfGuests = $('#numOfGuests').val();
     var date = $('#date').val();
 
     $.ajax({
@@ -144,13 +148,12 @@ $(document).ready(function() {
       method: 'post',
       data: {
         id: id,
-        name: name,
-        club: club,
+        type: type,
         price: price,
+        numOfGuests: numOfGuests,
         date: date
       },
       success: function(response) {
-        $('#' + id).children('td[data-target=name]').text(name);
         $('#' + id).children('td[data-target=type]').text(type);
         $('#' + id).children('td[data-target=price]').text(price);
         $('#' + id).children('td[data-target=numOfGuests]').text(numOfGuests);

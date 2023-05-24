@@ -31,6 +31,9 @@ if (isset($_POST['name']) && isset($_POST['password'])) {
     <script src="https://cdn.jsdelivr.net/npm/quietflow@1.0.2/lib/quietflow.min.js"></script>
    
 </head>
+<body>
+<?php  include'./header_footer/header.php';?>
+
 <body class="container" id="Form">
    <form name="form"  action="#" method="POST"  class="login-form" >
 <h1>LogIn</h1>
@@ -57,5 +60,6 @@ if (isset($_POST['name']) && isset($_POST['password'])) {
 
    </form>
 
+</body>
 </body>
 </html>

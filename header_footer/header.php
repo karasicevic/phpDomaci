@@ -10,8 +10,7 @@
 </head>
 <body>
     <nav>
-        <label class="logo"><img src="images/logo.jpg"></label>
-        <ul>
+           <ul>
         <li><a id="home-link" href="index.php">Home</a></li>
         <li><a id="book-link" href="booking.php">Book a event</a></li>
         <li><a id="events-link" href="bookedEvents.php">All events</a></li>
